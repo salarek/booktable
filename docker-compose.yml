@@ -1,0 +1,25 @@
+version: "3"
+services:
+  frontend:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: "book-table"
+    ports:
+      - "8082:8080"
+    volumes:
+      - ./app:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: "server-book-table"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server:/home/server
+      - /home/server/node_modules
