@@ -14,6 +14,29 @@ export default {
   },
 
   methods: {},
+  created() {
+    // if (localStorage.getItem("token") === null) {
+    //   this.$router.push("/login");
+    // }
+  },
+
+  // mounted() {
+  //   axios
+  //     .get("http://localhost:3000/user", {
+  //       headers: { token: localStorage.getItem("token") },
+  //     })
+  //     .then((res) => {
+  //       console.log(res);
+  //       this.name = res.data.user.name;
+  //       this.email = res.data.user.email;
+  //       this.level = res.data.user.level;
+  //       this.processlevel = res.data.user.processlevel;
+  //       this.categories = res.data.user.categories;
+  //       this.items = res.data.user.items;
+  //       this.activity = res.data.user.activity;
+  //       this.avatar = res.data.user.avatar;
+  //     });
+  // },
 };
 </script>
 
@@ -24,6 +47,7 @@ export default {
 .landing {
   font-family: "Cairo", sans-serif;
   position: absolute;
+  overflow: hidden;
   background-color: $primary;
   width: 100vw;
   height: 100vh;

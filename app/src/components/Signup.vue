@@ -224,7 +224,7 @@ export default {
       //   email: this.email,
       //   password: this.password,
       // };
-      axios.post("http://localhost:5000/signup", fd).then(
+      axios.post("http://localhost:3000/signup", fd).then(
         (res) => {
           console.log(res);
           this.error = "";

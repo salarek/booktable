@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import VueRouter from "vue-router";
-import Landing from "./components/Landing";
+import Home from "./components/Home/Home";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 
@@ -13,7 +13,7 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueRouter);
 const routes = [
-  { path: "/", component: Landing },
+  { path: "/", component: Home },
   { path: "/signup", component: Signup },
   { path: "/login", component: Login },
 ];

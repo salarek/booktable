@@ -89,7 +89,7 @@ export default {
   },
   created() {
     axios
-      .get("http://localhost:5000/mytables", {
+      .get("http://localhost:3000/mytables", {
         headers: { user: this.username },
       })
       .then((res) => {
@@ -100,7 +100,7 @@ export default {
   methods: {
     addCategory(name, username) {
       this.category.push({ name: name });
-      axios.post("http://localhost:5000/addcategory", { name, username });
+      axios.post("http://localhost:3000/addcategory", { name, username });
     },
     filterCategory(name) {
       for (let item of this.category) {

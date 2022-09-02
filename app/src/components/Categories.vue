@@ -79,7 +79,7 @@ export default {
   },
   created() {
     axios
-      .get("http://localhost:5000/mycategory", {
+      .get("http://localhost:3000/mycategory", {
         headers: { user: this.user },
       })
       .then((res) => {
@@ -104,7 +104,7 @@ export default {
 
       console.log(this.category);
       axios
-        .delete("http://localhost:5000/mycategory", {
+        .delete("http://localhost:3000/mycategory", {
           headers: { name: name, user: this.username },
         })
         .then((res) => {
