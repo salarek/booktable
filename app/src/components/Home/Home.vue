@@ -1,7 +1,7 @@
 <template>
   <div id="home" class="home">
     <header class="header-bar"></header>
-    <div class="main-body">
+    <div id="gowno" class="main-body">
       <div
         class="mozaik"
         @mouseover="mozaikOver = true"
@@ -20,6 +20,60 @@
           />
         </div>
       </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
+        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
+        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
+        consequatur, voluptate architecto id officiis?<br />
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
+        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
+        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
+        consequatur, voluptate architecto id officiis?<br />
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
+        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
+        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
+        consequatur, voluptate architecto id officiis?<br />
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
+        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
+        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
+        consequatur, voluptate architecto id officiis?<br />
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
+        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
+        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
+        consequatur, voluptate architecto id officiis?<br />
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
+        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
+        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
+        consequatur, voluptate architecto id officiis?<br />
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
+        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
+        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
+        consequatur, voluptate architecto id officiis?<br />
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
+        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
+        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
+        consequatur, voluptate architecto id officiis?<br />
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
+        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
+        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
+        consequatur, voluptate architecto id officiis?<br />
+      </div>
     </div>
   </div>
 </template>
@@ -35,10 +89,13 @@ export default {
     };
   },
   mounted() {
+    let doc = document.getElementById("gowno");
+    if (doc) {
+      doc.addEventListener("scroll", this.scrollActive);
+    }
     this.scrollActive();
   },
   created() {
-    window.addEventListener("scroll", this.scrollActive);
     for (let i = 0; i < 10; i++) {
       this.mozaikImages.push({ id: i, src: "./images/breakafast.jpg" });
     }
@@ -48,8 +105,13 @@ export default {
   },
 
   methods: {
-    scrollActive(event) {
-      console.log("elo", event);
+    scrollActive(e) {
+      let doc = document.getElementById("gowno").scrollHeight;
+      var position = document.getElementById("gowno").scrollTop;
+      let scrollPositionOfDiv = doc / position;
+      if (e) {
+        console.log("elo", scrollPositionOfDiv);
+      }
       //   for (let i = 0; i < 10; i++) {
       //     let doc = document.getElementById("mozaik-image" + i);
       //     if (doc) {
@@ -76,7 +138,10 @@ export default {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  font-size: 2vh;
   .header-bar {
+    position: relative;
     background-color: $third;
     width: 100%;
     min-height: 8vh;
@@ -90,7 +155,11 @@ export default {
     border-bottom-style: solid;
   }
   .main-body {
+    background: red;
+    position: relative;
     width: 100%;
+
+    overflow-y: scroll;
     .mozaik {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
