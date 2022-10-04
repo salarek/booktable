@@ -1,173 +1,62 @@
 <template>
   <div id="home" class="home">
-    <header class="header-bar"></header>
-    <div id="gowno" class="main-body">
-      <div
-        class="mozaik"
-        @mouseover="mozaikOver = true"
-        @mouseleave="mozaikOver = false"
-      >
-        <div v-for="mozaikImg in mozaikImages" :key="mozaikImg.id">
-          <img
-            class="mozaik-image"
-            :style="
-              mozaikOver
-                ? { width: '90%', height: '90%' }
-                : { width: '100%', height: '100%' }
-            "
-            :src="require(`${mozaikImg.src}`)"
-            alt=""
-          />
-        </div>
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
-        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
-        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
-        consequatur, voluptate architecto id officiis?<br />
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
-        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
-        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
-        consequatur, voluptate architecto id officiis?<br />
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
-        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
-        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
-        consequatur, voluptate architecto id officiis?<br />
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
-        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
-        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
-        consequatur, voluptate architecto id officiis?<br />
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
-        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
-        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
-        consequatur, voluptate architecto id officiis?<br />
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
-        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
-        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
-        consequatur, voluptate architecto id officiis?<br />
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
-        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
-        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
-        consequatur, voluptate architecto id officiis?<br />
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
-        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
-        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
-        consequatur, voluptate architecto id officiis?<br />
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem<br />
-        quibusdam aspernatur vel a illum praesentium laboriosam obcaecati<br />
-        facilis necessitatibus ipsa possimus nulla provident tempore impedit<br />
-        consequatur, voluptate architecto id officiis?<br />
-      </div>
-    </div>
+    <header class="header-bar"><navigation></navigation></header>
+    <img class="header-image" :src="require('./images/tables2.jpg')" alt="" />
   </div>
 </template>
 
 <script>
+import Navigation from "../Navigation/Navigation.vue";
 export default {
-  components: {},
+  components: { Navigation },
   name: "home",
   data() {
-    return {
-      mozaikImages: [],
-      mozaikOver: false,
-    };
-  },
-  mounted() {
-    let doc = document.getElementById("gowno");
-    if (doc) {
-      doc.addEventListener("scroll", this.scrollActive);
-    }
-    this.scrollActive();
-  },
-  created() {
-    for (let i = 0; i < 10; i++) {
-      this.mozaikImages.push({ id: i, src: "./images/breakafast.jpg" });
-    }
-  },
-  destroyed() {
-    window.removeEventListener("scroll", this.scrollActive);
+    return {};
   },
 
-  methods: {
-    scrollActive(e) {
-      let doc = document.getElementById("gowno").scrollHeight;
-      var position = document.getElementById("gowno").scrollTop;
-      let scrollPositionOfDiv = doc / position;
-      if (e) {
-        console.log("elo", scrollPositionOfDiv);
-      }
-      //   for (let i = 0; i < 10; i++) {
-      //     let doc = document.getElementById("mozaik-image" + i);
-      //     if (doc) {
-      //       doc.style.opacity = 0;
-      //     }
-      //   }
-    },
-    // shrinkMozaik() {
-    //   let doc = document.getElementById();
-    // },
-  },
+  methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/scss/variables";
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&display=swap");
+@import "@/scss/fonts";
+@import url("http://fonts.googleapis.com/css?family=Berkshire+Swash&subset=latin,latin-ext");
 
 .home {
-  font-family: "Cairo", sans-serif;
   position: absolute;
   background-color: $primary;
   width: 100vw;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  font-size: 2vh;
+  justify-content: center;
   .header-bar {
-    position: relative;
-    background-color: $third;
-    width: 100%;
+    position: fixed;
+    z-index: 2;
+    font-family: "Berkshire Swash", sans-serif;
+    background-color: transparent;
     min-height: 8vh;
+    width: 100%;
+    font-size: 4rem;
     display: flex;
     align-items: center;
     flex-direction: row;
     color: white;
-    // justify-content: center;
-    border-width: 1px;
-    border-color: white;
-    border-bottom-style: solid;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
   }
-  .main-body {
-    background: red;
-    position: relative;
-    width: 100%;
-
-    overflow-y: scroll;
-    .mozaik {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      .mozaik-image {
-        transition: 2s;
-        width: 100%;
-      }
+  .header-bar:hover {
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .header-image {
+    position: absolute;
+    width: 2000px;
+  }
+  @media (max-width: 1000px) {
+    .header-bar {
+      background-color: rgba(0, 0, 0, 0.5);
     }
   }
 }
