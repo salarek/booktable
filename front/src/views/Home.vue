@@ -4,116 +4,7 @@
       <img src="@/assets/HomeImages/headerImage.jpg" alt="" />
     </div>
 
-    <section>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Maxime
-        laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Maxime
-        laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Maxime
-        laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Maxime
-        laborum quod obcaecati! Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Deleniti odio ducimus corrupti laborum delectus
-        tempora, ipsum dicta temporibus exercitationem, assumenda sint voluptas
-        praesentium iste, ratione vitae. Maxime laborum quod obcaecati! Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
-        ducimus corrupti laborum delectus tempora, ipsum dicta temporibus
-        exercitationem, assumenda sint voluptas praesentium iste, ratione vitae.
-        Maxime laborum quod obcaecati!
-      </p>
-    </section>
+    <section></section>
   </div>
 </template>
 
@@ -127,6 +18,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .home {
+  overflow-x: hidden;
   .header-image {
     display: flex;
     justify-content: center;

@@ -12,6 +12,9 @@
         <li>
           <router-link class="link" :to="{ name: 'about' }">About</router-link>
         </li>
+        <li>
+          <router-link class="link" :to="{ name: 'Login' }">Login</router-link>
+        </li>
       </ul>
       <div class="icon">
         <i
@@ -29,6 +32,11 @@
           <li>
             <router-link class="link" :to="{ name: 'about' }"
               >About</router-link
+            >
+          </li>
+          <li>
+            <router-link class="link" :to="{ name: 'Login' }"
+              >Login</router-link
             >
           </li>
         </ul>
