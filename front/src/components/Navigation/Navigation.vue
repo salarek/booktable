@@ -3,6 +3,7 @@
     <nav>
       <div class="branding">
         <img src="./images/logo.jpg" alt="" />
+        <p>Book Table</p>
       </div>
       <ul v-show="!mobile" class="navigation">
         <li>
@@ -79,6 +80,7 @@ export default Vue.extend({
 });
 </script>
 <style lang="scss" scoped>
+@import url("http://fonts.googleapis.com/css?family=Berkshire+Swash&subset=latin,latin-ext");
 header {
   background: rgba(0, 0, 0, 0.5);
   z-index: 99;
@@ -126,6 +128,12 @@ header {
       img {
         width: 50px;
         transition: 0.5s ease all;
+      }
+      p {
+        margin-left: 12px;
+        color: white;
+        font-size: 24px;
+        font-family: "Berkshire Swash", sans-serif;
       }
     }
     .navigation {

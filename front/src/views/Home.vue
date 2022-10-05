@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <img src="@/assets/HomeImages/headerImage.jpg" alt="" />
+    <div class="header-image">
+      <img src="@/assets/HomeImages/headerImage.jpg" alt="" />
+    </div>
+
     <section>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti odio
@@ -122,3 +125,13 @@ export default {
   components: {},
 };
 </script>
+<style lang="scss" scoped>
+.home {
+  .header-image {
+    display: flex;
+    justify-content: center;
+    img {
+    }
+  }
+}
+</style>
