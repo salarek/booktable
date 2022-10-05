@@ -1,5 +1,5 @@
 <template>
-  <header :class="{ 'scrolled-nav': scrollPosition }">
+  <header :class="{ 'scrolled-nav': scrollNav }">
     <nav>
       <div class="branding">
         <img src="./images/logo.jpg" alt="" />
@@ -41,15 +41,39 @@ export default Vue.extend({
   name: "Navigation",
   data() {
     return {
-      scrollPosition: null,
-      mobile: true,
-      mobileNav: true,
+      scrollNav: null,
+      mobile: null,
+      mobileNav: null,
       windowWidth: null,
     };
   },
+  created() {
+    window.addEventListener("resize", this.checkScreen);
+    this.checkScreen();
+  },
+  mounted() {
+    window.addEventListener("scroll", this.updateScroll);
+  },
   methods: {
-    toggleMobileNav() {
+    toggleMobileNav(): void {
       this.mobileNav = !this.mobileNav;
+    },
+    checkScreen(): void {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 750) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
+    },
+    updateScroll(): void {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 50) {
+        this.scrollNav = true;
+        return;
+      }
+      this.scrollNav = false;
     },
   },
 });
@@ -141,6 +165,28 @@ header {
         .link {
           color: #000;
         }
+      }
+    }
+    .mobile-nav-enter-active,
+    .mobile-nav-leave-active {
+      transition: 1s ease all;
+    }
+    .mobile-nav-enter,
+    .mobile-nav-leave-to {
+      transform: translateX(-250px);
+    }
+    .mobile-nav-enter-to {
+      transform: translateX(0);
+    }
+  }
+}
+.scrolled-nav {
+  background-color: #000;
+  nav {
+    padding: 8px 0;
+    .branding {
+      img {
+        width: 40px;
       }
     }
   }

@@ -2,14 +2,14 @@ version: "3"
 services:
   frontend:
     build:
-      context: ./app
+      context: ./front
       dockerfile: Dockerfile
     container_name: "book-table"
     ports:
       - "8082:8080"
     volumes:
-      - ./app:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./front:/usr/src/front
+      - /usr/src/front/node_modules
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
