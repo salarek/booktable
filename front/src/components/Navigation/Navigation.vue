@@ -84,6 +84,9 @@ export default Vue.extend({
       }
       this.scrollNav = false;
     },
+    AddDebil() {
+      return "Ukasz" + 1;
+    },
   },
 });
 </script>

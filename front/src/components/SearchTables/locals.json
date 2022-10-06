@@ -1,0 +1,6 @@
+{
+  "cities": [
+    { "citi": "Kielce", "locals": ["Quest", "Stary Browar", "Hollywood"] },
+    { "citi": "Warszawa", "locals": ["Quest", "Stary Browar", "Hollywood"] }
+  ]
+}

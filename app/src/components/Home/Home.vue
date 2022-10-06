@@ -54,11 +54,6 @@ export default {
     position: absolute;
     width: 2000px;
   }
-  @media (max-width: 1000px) {
-    .header-bar {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-  }
 }
 
 .btn-primary {

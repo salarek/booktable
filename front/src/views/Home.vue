@@ -20,15 +20,16 @@
         </div>
       </div>
     </nav>
+    <search-tables></search-tables>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
+import SearchTables from "../components/SearchTables/SearchTables.vue";
 export default {
   name: "Home",
-  components: {},
+  components: { SearchTables },
 };
 </script>
 <style lang="scss" scoped>
@@ -36,7 +37,9 @@ export default {
   overflow-x: hidden;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   .header-image {
     display: flex;
     justify-content: center;
