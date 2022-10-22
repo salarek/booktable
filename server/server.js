@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 // const Cities = require("./models/Cities");
 const cities = require("./routes/cities.js");
-mongoose.connect("mongodb://localhost:27017/bookTableLocal");
+mongoose.connect(process.env.MONGO_URL);
 mongoose.connection.on("error", (err) => {
   console.log("Could not connect to the database. Exiting now...");
   process.exit();
