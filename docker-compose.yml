@@ -18,8 +18,24 @@ services:
       context: ./server
       dockerfile: Dockerfile
     container_name: "server-book-table"
+    environment:
+      - PORT=5000
+      - URL=http://localhost
+      - MONGO_URL=mongodb://database:27017
+      - DB_NAME=bookTableLocal
+      - API_VERSION=v1
     ports:
-      - "3000:3000"
+      - "5000:5000"
     volumes:
       - ./server:/home/server
       - /home/server/node_modules
+  database:
+    image: mongo:latest
+    container_name: database
+    volumes:
+      - mongodb_api:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  mongodb_api:
