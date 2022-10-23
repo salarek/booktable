@@ -13,7 +13,9 @@
           <router-link class="link" :to="{ name: 'about' }">About</router-link>
         </li>
         <li>
-          <router-link class="link" :to="{ name: 'Login' }">Login</router-link>
+          <router-link class="link" :to="{ name: 'AuthenticationPanel' }"
+            >Login</router-link
+          >
         </li>
       </ul>
       <div class="icon">
@@ -129,8 +131,8 @@ header {
       padding-bottom: 4px;
       border-bottom: 1px solid transparent;
       &:hover {
-        color: rgb(46, 173, 223);
-        border-color: rgb(46, 173, 223);
+        color: rgb(255, 132, 0);
+        border-color: rgb(255, 132, 0);
       }
     }
     .branding {

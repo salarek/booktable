@@ -1,9 +1,8 @@
 <template>
   <main>
     <h1>Szukaj Lokalów</h1>
-    <!-- <button @click="showAllLocals()">fffff</button> -->
     <section>
-      <div v-for="item in getRandomLocals" :key="item.id">
+      <div v-for="item in randomLocals" :key="item.id">
         <div class="section-item">
           <img src="@/components/SearchTables/images/lokal.jpg" alt="" />
           <div class="text">{{ item.local }}</div>
@@ -14,29 +13,24 @@
   </main>
 </template>
 <script lang="ts">
-import locals from "./locals.json";
+import axios from "axios";
 import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-      locals: locals,
+      info: null,
+      randomLocals: [],
     };
   },
-  computed: {
-    getRandomLocals() {
-      const randomLocals = [];
-      for (const localCiti of locals.cities) {
-        for (const localsInCiti of localCiti.locals) {
-          randomLocals.push({ citi: localCiti.citi, local: localsInCiti });
+  computed: {},
+  mounted() {
+    axios.get("http://localhost:5000/cities", {}).then((res) => {
+      for (const citi of res.data.cities) {
+        for (const localsInCiti of citi.locals) {
+          this.randomLocals.push({ citi: citi.citi, local: localsInCiti });
         }
       }
-      return randomLocals;
-    },
-  },
-  methods: {
-    showAllLocals() {
-      console.log(typeof this.locals.cities);
-    },
+    });
   },
 });
 </script>

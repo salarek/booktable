@@ -1,23 +1,24 @@
 version: "3"
 services:
-  frontend:
-    build:
-      context: ./front
-      dockerfile: Dockerfile
-    container_name: "book-table"
-    ports:
-      - "8080:8080"
-    volumes:
-      - ./front:/usr/src/front
-      - /usr/src/front/node_modules
-    environment:
-      - NODE_ENV=development
-      - CHOKIDAR_USEPOLLING=true
+  # frontend:
+  #   build:
+  #     context: ./front
+  #     dockerfile: Dockerfile
+  #   container_name: "book-table"
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - ./front:/usr/src/front
+  #     - /usr/src/front/node_modules
+  #   environment:
+  #     - NODE_ENV=development
+  #     - CHOKIDAR_USEPOLLING=true
   backend:
     build:
       context: ./server
       dockerfile: Dockerfile
     container_name: "server-book-table"
+    restart: always
     environment:
       - PORT=5000
       - URL=http://localhost
@@ -29,6 +30,8 @@ services:
     volumes:
       - ./server:/home/server
       - /home/server/node_modules
+    links:
+      - database
   database:
     image: mongo:latest
     container_name: database

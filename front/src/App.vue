@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <navigation></navigation>
+
     <router-view />
   </div>
 </template>
@@ -30,5 +31,14 @@ export default Vue.extend({
   padding: 0 20px;
   max-width: 1140px;
   margin: 0 auto;
+}
+.slide-fade-leave-active,
+.slide-fade-enter-active {
+  transition: all 0.5s ease-out;
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+  opacity: 0;
 }
 </style>
