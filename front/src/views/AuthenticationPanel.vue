@@ -2,7 +2,10 @@
   <div class="authentication-panel">
     <div class="background-image"></div>
     <main>
-      <login></login>
+      <transition mode="out-in" name="slide-up">
+        <login v-if="mode === 'login'" @switchMode="switchMode"></login>
+        <sign-up v-else @switchMode="switchMode"></sign-up>
+      </transition>
       <aside>
         <img
           :src="require('../assets/AuthenticationPanelImages/bcg.jpg')"
@@ -21,8 +24,19 @@
 <script lang="ts">
 import Vue from "vue";
 import Login from "../components/Login/Login.vue";
+import SignUp from "../components/SignUp/SignUp.vue";
 export default Vue.extend({
-  components: { Login },
+  components: { Login, SignUp },
+  data() {
+    return {
+      mode: "login",
+    };
+  },
+  methods: {
+    switchMode(val: string): void {
+      this.mode = val;
+    },
+  },
 });
 </script>
 <style lang="scss" scoped>
@@ -52,11 +66,14 @@ export default Vue.extend({
       position: relative;
       width: 60vw;
       background: rgb(75, 75, 75);
-      @media screen and (max-width: 900px) {
+      @media screen and (max-width: 800px) {
         position: relative;
         display: flex;
         align-items: center;
         width: 100%;
+      }
+      @media screen and (max-width: 800px) and (max-height: 920px) {
+        display: none;
       }
       .gif {
         position: absolute;
@@ -65,17 +82,19 @@ export default Vue.extend({
         align-items: center;
         width: 100%;
         height: 100vh;
-        @media screen and (max-width: 900px) {
+        @media screen and (max-width: 800px) {
           height: 40vh;
         }
+
         left: 0;
         top: 0;
         img {
           background: white;
           padding: 2em;
-          width: 70%;
-          @media screen and (max-width: 900px) {
-            width: 60%;
+          width: 80%;
+          @media screen and (max-width: 800px) {
+            width: auto;
+            height: 87%;
           }
         }
       }
@@ -83,12 +102,24 @@ export default Vue.extend({
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
   section {
-    height: 60vh;
+    height: 65vh;
   }
   main {
     flex-direction: column;
   }
+}
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.25s ease-out;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+}
+
+.slide-up-leave-to {
+  opacity: 0;
 }
 </style>

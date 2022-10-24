@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <navigation></navigation>
-
-    <router-view />
+    <transition mode="out-in" name="slide-fade">
+      <router-view />
+    </transition>
   </div>
 </template>
 <script lang="ts">
@@ -34,7 +35,7 @@ export default Vue.extend({
 }
 .slide-fade-leave-active,
 .slide-fade-enter-active {
-  transition: all 0.5s ease-out;
+  transition: all 0.5s ease;
 }
 
 .slide-fade-enter,

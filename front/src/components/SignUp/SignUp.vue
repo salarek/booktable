@@ -1,27 +1,46 @@
 <template>
   <section>
-    <h1>Logowanie</h1>
+    <h1>Rejestracja</h1>
     <div class="form">
       <div class="label">Email:</div>
       <input type="text" />
     </div>
     <div class="form">
       <div class="label">Hasło:</div>
-      <input type="text" />
-      <button>Zaloguj się</button>
+      <input
+        :type="passwordMode"
+        v-model="password"
+        class="form-control"
+        id="inputPassword"
+        name="password"
+      />
+    </div>
+
+    <div class="form">
+      <div class="label">Powtórz Hasło:</div>
+      <input
+        :type="passwordMode"
+        v-model="repeatPassword"
+        class="form-control"
+        id="inputPassword"
+        name="password"
+      />
+      <button>Zarejestruj konto</button>
     </div>
     <p>
-      Nie masz konta?
-      <u @click="switchMode">Zarejestruj&nbsp;się&nbsp;za&nbsp;darmo!</u>
+      <u @click="switchMode">Powrót&nbsp;do&nbsp;logowania&nbsp;</u>
     </p>
   </section>
 </template>
 <script lang="ts">
 import Vue from "vue";
 export default Vue.extend({
+  data() {
+    return { passwordMode: "password" };
+  },
   methods: {
     switchMode() {
-      this.$emit("switchMode", "signup");
+      this.$emit("switchMode", "login");
     },
   },
 });
@@ -53,11 +72,11 @@ section {
       padding: 0.3em;
     }
     input {
-      padding-bottom: 2px;
       font-size: 1.6rem;
       width: 100%;
       border: none;
       padding-left: 12px;
+      padding-bottom: 2px;
       border-bottom: 2px solid rgb(146, 146, 146);
 
       &:focus {
