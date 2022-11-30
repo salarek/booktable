@@ -6,19 +6,11 @@ const userBookTableSchema = new Schema({
     unique: true,
     type: String,
   },
-  avatar: {
-    type: Array,
-  },
   email: {
     unique: true,
     type: String,
   },
   password: String,
-  level: Number,
-  processlevel: Number,
-  categories: String,
-  items: String,
-  activity: Number,
 });
-const User = mongoose.model("UserBookTable", userBookTableSchema);
-module.exports = User;
+const Users = mongoose.model("users", userBookTableSchema);
+module.exports = Users;

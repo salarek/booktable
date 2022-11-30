@@ -2,8 +2,12 @@
   <section>
     <h1>Rejestracja</h1>
     <div class="form">
+      <div class="label">Nazwa użytkownika:</div>
+      <input v-model="name" type="text" />
+    </div>
+    <div class="form">
       <div class="label">Email:</div>
-      <input type="text" />
+      <input v-model="email" type="text" />
     </div>
     <div class="form">
       <div class="label">Hasło:</div>
@@ -25,7 +29,7 @@
         id="inputPassword"
         name="password"
       />
-      <button>Zarejestruj konto</button>
+      <button @click="signup">Zarejestruj konto</button>
     </div>
     <p>
       <u @click="switchMode">Powrót&nbsp;do&nbsp;logowania&nbsp;</u>
@@ -34,13 +38,47 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
+import axios from "axios";
 export default Vue.extend({
   data() {
-    return { passwordMode: "password" };
+    return {
+      passwordMode: "password",
+      name: "",
+      password: "",
+      email: "",
+      error: "",
+    };
   },
   methods: {
     switchMode() {
       this.$emit("switchMode", "login");
+    },
+    signup() {
+      const fd = new FormData();
+      fd.append("name", this.name);
+      fd.append("email", this.email);
+      fd.append("password", this.password);
+      const newUser = {
+        user: this.name,
+        email: this.email,
+        password: this.password,
+      };
+      // let newUser = {
+      //   name: this.name,
+      //   email: this.email,
+      //   password: this.password,
+      // };
+      axios.post("http://localhost:5000/signup", newUser).then(
+        (res) => {
+          console.log("User added!", res);
+          this.error = "";
+          // this.$router.push("/login");
+        },
+        (err) => {
+          console.log(err.response);
+          this.error = err.response.data.error;
+        }
+      );
     },
   },
 });

@@ -3,12 +3,12 @@
     <h1>Logowanie</h1>
     <div class="form">
       <div class="label">Email:</div>
-      <input type="text" />
+      <input v-model="email" type="text" />
     </div>
     <div class="form">
       <div class="label">Hasło:</div>
-      <input type="text" />
-      <button>Zaloguj się</button>
+      <input v-model="password" type="text" />
+      <button @click="login">Zaloguj się</button>
     </div>
     <p>
       Nie masz konta?
@@ -18,10 +18,38 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
+import axios from "axios";
 export default Vue.extend({
+  data() {
+    return {
+      email: "",
+      password: "",
+      error: "",
+    };
+  },
   methods: {
     switchMode() {
       this.$emit("switchMode", "signup");
+    },
+    login() {
+      const user = {
+        email: this.email,
+        password: this.password,
+      };
+      axios.post("http://localhost:5000/login", user).then(
+        (res) => {
+          //if successfull
+          if (res.status === 200) {
+            document.cookie = `token=${res.data.token}`;
+            localStorage.setItem("token", res.data.token);
+            this.$router.push("/");
+          }
+        },
+        (err) => {
+          console.log(err.response);
+          this.error = err.response.data.error;
+        }
+      );
     },
   },
 });
