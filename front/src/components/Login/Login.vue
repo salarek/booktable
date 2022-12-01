@@ -41,8 +41,7 @@ export default Vue.extend({
           //if successfull
           if (res.status === 200) {
             document.cookie = `token=${res.data.token}`;
-            localStorage.setItem("token", res.data.token);
-            this.$router.push("/");
+            this.$router.push("/landingpage");
           }
         },
         (err) => {

@@ -12,9 +12,17 @@
         <li>
           <router-link class="link" :to="{ name: 'about' }">About</router-link>
         </li>
-        <li>
+        <li v-if="!loginStatus">
           <router-link class="link" :to="{ name: 'AuthenticationPanel' }"
             >Login</router-link
+          >
+        </li>
+        <li v-else>
+          <router-link
+            class="link"
+            @click.native="setLoginStatus"
+            :to="{ name: 'Home' }"
+            >Log out</router-link
           >
         </li>
       </ul>
@@ -50,6 +58,7 @@
 import Vue from "vue";
 export default Vue.extend({
   name: "Navigation",
+
   data() {
     return {
       scrollNav: null,
@@ -65,7 +74,16 @@ export default Vue.extend({
   mounted() {
     window.addEventListener("scroll", this.updateScroll);
   },
+  computed: {
+    loginStatus() {
+      return this.$store.getters.getLoginStatus;
+    },
+  },
   methods: {
+    setLoginStatus() {
+      document.cookie = "token=''";
+      this.$store.commit("SET_LOGIN_STATUS", false);
+    },
     toggleMobileNav(): void {
       this.mobileNav = !this.mobileNav;
     },

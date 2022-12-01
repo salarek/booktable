@@ -5,6 +5,7 @@ import Home from '../views/Home.vue'
 Vue.use(VueRouter)
 
   const routes: Array<RouteConfig> = [
+    
   {
     path: '/',
     name: 'Home',
@@ -22,6 +23,23 @@ Vue.use(VueRouter)
     path: '/AuthenticationPanel',
     name: 'AuthenticationPanel',
     component: () => import(/* webpackChunkName: "about" */ '../views/AuthenticationPanel.vue')
+  },
+  {
+    path: '/landingpage',
+    name: 'landingpage',
+    component: () => import(/* webpackChunkName: "about" */ '../views/LandingPage.vue'),
+    beforeEnter(to, from, next) {
+       if(document.cookie==""){
+        next({
+          path: '/',
+        })
+       }else{
+        next()
+       }
+      
+
+    },
+
   }
 ]
 
