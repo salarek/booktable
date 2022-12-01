@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main :style="{ ...cssStyle }">
     <h1>Szukaj Lokalów</h1>
     <section>
       <div v-for="item in randomLocals" :key="item.id">
@@ -16,6 +16,7 @@
 import axios from "axios";
 import Vue from "vue";
 export default Vue.extend({
+  props: ["cssStyle"],
   data() {
     return {
       info: null,
@@ -40,7 +41,7 @@ main {
   position: absolute;
   top: 800px;
   width: 80%;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgb(237, 237, 237);
   padding: 12px;
   display: flex;
   justify-content: center;
