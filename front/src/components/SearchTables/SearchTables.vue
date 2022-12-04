@@ -4,18 +4,18 @@
     <nav>
       <div class="form-item">
         <div class="label">Miasto:</div>
-        <input type="text" />
+        <input v-model="citi" type="text" />
       </div>
       <div class="form-item">
         <div class="label">Lokal:</div>
-        <input type="text" />
+        <input v-model="place" type="text" />
       </div>
     </nav>
     <section>
-      <div v-for="item in randomLocals" :key="item.id">
+      <div v-for="item in filteredPlaces" :key="item.id">
         <div class="section-item">
           <img src="@/components/SearchTables/images/lokal.jpg" alt="" />
-          <div class="text">{{ item.local }}</div>
+          <div class="text">{{ item.place }}</div>
           <div class="text">{{ item.citi }}</div>
         </div>
       </div>
@@ -31,14 +31,33 @@ export default Vue.extend({
     return {
       info: null,
       randomLocals: [],
+      citi: "",
+      place: "",
     };
   },
-  computed: {},
+  computed: {
+    filteredPlaces() {
+      const inputCiti = this.citi.toLowerCase();
+      const inputPlace = this.place.toLowerCase();
+      if (this.citi == "") {
+        return this.randomLocals;
+      } else {
+        return this.randomLocals.filter((item: any) => {
+          if (
+            item.citi.toLowerCase().includes(inputCiti) &&
+            item.place.toLowerCase().includes(inputPlace)
+          )
+            return item;
+        });
+      }
+    },
+  },
+
   mounted() {
     axios.get("http://localhost:5000/cities", {}).then((res) => {
       for (const citi of res.data.cities) {
         for (const localsInCiti of citi.locals) {
-          this.randomLocals.push({ citi: citi.citi, local: localsInCiti });
+          this.randomLocals.push({ citi: citi.citi, place: localsInCiti });
         }
       }
     });
