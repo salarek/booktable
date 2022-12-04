@@ -61,6 +61,7 @@ export default {
       align-items: center;
       margin: 0 12px;
       img {
+        border-radius: 18px;
         background: #fff;
         padding: 10px;
         width: 300px;

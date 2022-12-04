@@ -94,6 +94,7 @@ section {
       }
     }
     button {
+      border-radius: 18px;
       font-family: "Bellefair", sans-serif;
       font-size: 1.5rem;
       background: rgb(146, 146, 146);

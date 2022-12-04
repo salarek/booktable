@@ -89,6 +89,7 @@ export default Vue.extend({
         left: 0;
         top: 0;
         img {
+          border-radius: 18px;
           background: white;
           padding: 2em;
           width: 80%;
