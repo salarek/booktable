@@ -12,8 +12,9 @@
       </div>
     </nav>
     <section>
-      <div v-for="item in filteredPlaces" :key="item.id">
+      <div v-for="(item, index) in filteredPlaces" :key="index">
         <div
+          :id="item + index"
           :class="item.hidden ? 'section-item-hidden' : 'section-item'"
           class="section-item"
         >
@@ -40,6 +41,20 @@ export default Vue.extend({
       place: "",
     };
   },
+  methods: {
+    checkIsItemHidden(val, id) {
+      if (val) {
+        setTimeout(() => {
+          const gowno = document.getElementById(id);
+          if (gowno) gowno.style.display = "none";
+        }, 1000);
+      } else {
+        const gowno = document.getElementById(id);
+        if (gowno) gowno.style.display = "flex";
+        console.log("gowno motyla2");
+      }
+    },
+  },
   computed: {
     filteredPlaces() {
       const inputCiti = this.citi.toLowerCase();
@@ -60,7 +75,15 @@ export default Vue.extend({
       }
     },
   },
-
+  watch: {
+    filteredPlaces(newArray, oldQuestion) {
+      let counter = 0;
+      for (const item of newArray) {
+        this.checkIsItemHidden(item.hidden, item + counter);
+        counter++;
+      }
+    },
+  },
   mounted() {
     axios.get("http://localhost:5000/cities", {}).then((res) => {
       for (const citi of res.data.cities) {
@@ -151,9 +174,10 @@ main {
     }
     .section-item-hidden {
       animation-name: example2;
-      animation-duration: 2s;
+      animation-duration: 1s;
       animation-fill-mode: forwards;
-      display: none;
+      // display: none !important;
+      // visibility: hidden !important;
     }
     @keyframes example {
       from {
