@@ -13,9 +13,14 @@
     </nav>
     <section>
       <div v-for="item in filteredPlaces" :key="item.id">
-        <div class="section-item">
+        <div
+          :class="item.hidden ? 'section-item-hidden' : 'section-item'"
+          class="section-item"
+        >
           <img src="@/components/SearchTables/images/lokal.jpg" alt="" />
+
           <div class="text">{{ item.place }}</div>
+
           <div class="text">{{ item.citi }}</div>
         </div>
       </div>
@@ -39,15 +44,18 @@ export default Vue.extend({
     filteredPlaces() {
       const inputCiti = this.citi.toLowerCase();
       const inputPlace = this.place.toLowerCase();
-      if (this.citi == "") {
+      if (this.citi == "" && this.place == "") {
         return this.randomLocals;
       } else {
-        return this.randomLocals.filter((item: any) => {
+        return this.randomLocals.map((item: any) => {
           if (
             item.citi.toLowerCase().includes(inputCiti) &&
             item.place.toLowerCase().includes(inputPlace)
-          )
+          ) {
             return item;
+          } else {
+            return { ...item, hidden: true };
+          }
         });
       }
     },
@@ -68,6 +76,7 @@ export default Vue.extend({
 @import url("http://fonts.googleapis.com/css?family=Berkshire+Swash&subset=latin,latin-ext");
 main {
   position: absolute;
+  transition: 1s;
   top: 800px;
   width: 80%;
   background: rgb(237, 237, 237);
@@ -113,11 +122,13 @@ main {
     }
   }
   section {
+    transition: 1s;
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     .section-item {
+      transition: 3s;
       margin: 5px;
       display: flex;
       flex-direction: column;
@@ -128,12 +139,36 @@ main {
       font-size: 1.5rem;
       border-radius: 18px;
       background: rgb(255, 255, 255);
+      animation-name: example;
+      animation-duration: 2s;
       img {
         border-radius: 18px;
         width: 260px;
       }
       .text {
         margin-top: 10px;
+      }
+    }
+    .section-item-hidden {
+      animation-name: example2;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      display: none;
+    }
+    @keyframes example {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes example2 {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
       }
     }
   }
